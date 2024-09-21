@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/iletisim.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="main-header__container">
+            <div class="main-header__left">
+                <div class="main-header__logo">
+                    <a href="#"><img src="" alt="Logo"></a>
+                </div>
+                <div class="main-header__text">
+                    <a href="#">
+                        <h1>E<span>-Ticaret</span></h1>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="main-header__under">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Ürünlerimiz</a>
+                        <div class="dropdown-content">
+                            <a href="#">Kadın Giyim</a>
+                            <a href="#">Erkek Giyim</a>
+                            <a href="#">Çocuk Giyim</a>
+                            <a href="#">Bebek Giyim</a>
+                        </div>
+                    </li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li class="cart">
+                        <a href="sepet.html">
+                            <i class="fas fa-shopping-cart"></i> Sepet (<span id="cart-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Bizimle İletişime Geçin</h2>
+            <p>Herhangi bir sorunuz veya öneriniz mi var? Aşağıdaki formu doldurarak bize ulaşabilirsiniz!</p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Adınız:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mesajınız:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Gönder</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Tüm hakları saklıdır &copy; 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://wisynco.com/wp-content/uploads/2014/12/footer-background-02.png') no-repeat center center fixed;
+    background-size: cover; 
+}
+
+.main-header {
+    margin: 0 0 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header .main-header__container {
+    width: 100%;
+    height: 70px;
+    padding: 0px 10px;
+    margin: 0 0 15px;
+    background-color: #333;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.main-header .main-header__container .main-header__left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header .main-header__container .main-header__left .main-header__text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: start;
+    line-height: 70px;
+    letter-spacing: .90px;
+}
+
+.main-header .main-header__container .main-header__under {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header .main-header__container .main-header__under ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.main-header .main-header__container .main-header__under ul li {
+    margin: 0 15px 0 0;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    float: left;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s; 
+}
+
+nav ul li a:hover {
+    color: cadetblue;
+    text-shadow: 0 0 10px rgba(95, 235, 228, 0.5); 
+}
+
+.dropbtn, li a {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li .dropbtn {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #3a447e;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.contact-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(50, 50, 50, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #b82d4b;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.contact-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid #28a745; /* Yeşil renk ile odak */
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.85); 
+    color: white;
+    width: 100%;
+    bottom: 0;
+    background: url('https://wisynco.com/wp-content/uploads/2014/12/footer-background-02.png') no-repeat center center fixed;
+    background-size: cover; 
+}

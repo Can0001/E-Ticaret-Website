@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Ticaret Sitesi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="main-header__container">
+            <div class="main-header__left">
+                <div class="main-header__logo">
+                    <a href="index.html"><img src="" alt="Logo"></a>
+                </div>
+                <div class="main-header__text">
+                    <a href="index.html">
+                        <h1>E<span>-Ticaret</span></h1>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="main-header__under">
+                <div class="main-header__container">
+                    <ul>
+                        <li><a href="#">Ana Sayfa</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Ürünlerimiz</a>
+                            <div class="dropdown-content">
+                                <a href="#">Kadın Giyim</a>
+                                <a href="#">Erkek Giyim</a>
+                                <a href="#">Çocuk Giyim</a>
+                                <a href="#">Bebek Giyim</a>
+                            </div>
+                        </li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li class="cart">
+                            <a href="sepet.html">
+                                <i class="fas fa-shopping-cart"></i> Sepet (<span id="cart-count">0</span>)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="slider">
+            <div class="slider-container">
+                <div class="slide active">
+                    <img src="https://via.placeholder.com/800x400?text=Slider+1" alt="Slider 1">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x400?text=Slider+2" alt="Slider 2">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x400?text=Slider+3" alt="Slider 3">
+                </div>
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </section>
+
+        <section class="product-list">
+            <article class="product">
+                <img src="https://via.placeholder.com/150" alt="Ürün 1">
+                <h2>Ürün 1</h2>
+                <p>Fiyat: 100 TL</p>
+                <button data-id="1" data-name="Ürün 1" data-price="100">Sepete Ekle</button>
+            </article>
+            <article class="product">
+                <img src="https://via.placeholder.com/150" alt="Ürün 2">
+                <h2>Ürün 2</h2>
+                <p>Fiyat: 200 TL</p>
+                <button data-id="2" data-name="Ürün 2" data-price="200">Sepete Ekle</button>
+            </article>
+            <article class="product">
+                <img src="https://via.placeholder.com/150" alt="Ürün 3">
+                <h2>Ürün 3</h2>
+                <p>Fiyat: 300 TL</p>
+                <button data-id="3" data-name="Ürün 3" data-price="300">Sepete Ekle</button>
+            </article>
+            <article class="product">
+                <img src="https://via.placeholder.com/150" alt="Ürün 4">
+                <h2>Ürün 4</h2>
+                <p>Fiyat: 150 TL</p>
+                <button data-id="4" data-name="Ürün 4" data-price="150">Sepete Ekle</button>
+            </article>
+            <article class="product">
+                <img src="https://via.placeholder.com/150" alt="Ürün 5">
+                <h2>Ürün 5</h2>
+                <p>Fiyat: 250 TL</p>
+                <button data-id="5" data-name="Ürün 5" data-price="250">Sepete Ekle</button>
+            </article>
+            <article class="product">
+                <img src="https://via.placeholder.com/150" alt="Ürün 6">
+                <h2>Ürün 6</h2>
+                <p>Fiyat: 350 TL</p>
+                <button data-id="6" data-name="Ürün 6" data-price="350">Sepete Ekle</button>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Tüm hakları saklıdır &copy; 2024</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = document.getElementById('cart-count');
+
+        document.querySelectorAll('.product button').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-id');
+                const productName = this.getAttribute('data-name');
+                const productPrice = parseFloat(this.getAttribute('data-price'));
+
+                const existingProduct = cart.find(item => item.id === productId);
+
+                if (existingProduct) {
+                    existingProduct.quantity++;
+                } else {
+                    cart.push({
+                        id: productId,
+                        name: productName,
+                        price: productPrice,
+                        quantity: 1
+                    });
+                }
+                updateCartCount();
+                localStorage.setItem('cart', JSON.stringify(cart));
+            });
+        });
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(() => {
+            changeSlide(1);
+        }, 6000);
+    </script>
+</body>
+</html>
