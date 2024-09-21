@@ -173,7 +173,7 @@ textarea {
 input:focus,
 textarea:focus {
     outline: none;
-    border: 2px solid #28a745; /* Yeşil renk ile odak */
+    border: 2px solid #28a745; 
 }
 
 button {
